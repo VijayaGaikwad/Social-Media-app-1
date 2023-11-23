@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import express from "express";
 import bodyParser from "body-parser";
 import mongoose from "mongoose";
@@ -7,6 +8,7 @@ import AuthRoute from './Routes/AuthRoute.js';
 import UserRoute from './Routes/UserRoute.js';
 import PostRoute from './Routes/PostRoute.js';
 import UploadRoute from "./Routes/UploadRoute.js";
+
 
 // Routes
 
@@ -22,14 +24,28 @@ app.use(cors());
 
 dotenv.config();
 
+// __dirname = path.resolve();
+// if(process.env.NODE_ENV === "production"){
+//       app.use(express.static(path.join(__dirname, "/client/build")))
+//       app.get("*", (req, res) =>{
+//         res.sendFile(path.resolve(__dirname,"client", "build", "index.html"))
+//       })
+// }else{
+//     app.get("/", (req, res) => {
+//       res.send("API is running....");
+//     });
+// }
+
+const PORT = process.env.PORT || 5000;
+
 mongoose
-  .connect("mongodb+srv://flexxit:flexxit@flexxit.gw2tzph.mongodb.net/SocialMedia?retryWrites=true&w=majority", {
+  .connect(process.env.MONGO_DB, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
   .then(() =>
-    app.listen(5000, () =>
-      console.log("Listening at 5000")
+    app.listen(PORT, () =>
+      console.log(`Listening at ${PORT}`)
     )
   )
   .catch((error) => console.log(error));
