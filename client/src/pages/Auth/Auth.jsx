@@ -55,10 +55,10 @@ const Auth = () => {
       <div className="a-left">
         <img src={Logo} alt="" />
 
-        <div className="Webname">
-          <h1>ZKC Media</h1>
+        {/* <div className="Webname">
+          <h1>THE SOCIAL</h1>
           <h6>Explore the ideas throughout the world</h6>
-        </div>
+        </div> */}
       </div>
 
       {/* right form side */}
