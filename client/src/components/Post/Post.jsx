@@ -22,10 +22,10 @@ const Post = ({data}) => {
   }
   return (
     <div className="Post">
-      <div className="PostShare">
+      {/* <div className="PostShare">
       <img src={user.profilePicture ? serverPublic + user.profilePicture : serverPublic + "defaultProfile.png"} alt="" />
       <div>{user.firstname} </div>
-      </div>
+      </div> */}
         <img src={data.image ? process.env.REACT_APP_PUBLIC_FOLDER + data.image : ""} alt="" />
 
 

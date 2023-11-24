@@ -24,28 +24,15 @@ app.use(cors());
 
 dotenv.config();
 
-// __dirname = path.resolve();
-// if(process.env.NODE_ENV === "production"){
-//       app.use(express.static(path.join(__dirname, "/client/build")))
-//       app.get("*", (req, res) =>{
-//         res.sendFile(path.resolve(__dirname,"client", "build", "index.html"))
-//       })
-// }else{
-//     app.get("/", (req, res) => {
-//       res.send("API is running....");
-//     });
-// }
-
-const PORT = process.env.PORT || 5000;
 
 mongoose
-  .connect(process.env.MONGO_DB, {
+  .connect("mongodb+srv://flexxit:flexxit@flexxit.gw2tzph.mongodb.net/SocialMedia?retryWrites=true&w=majority", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
   .then(() =>
-    app.listen(PORT, () =>
-      console.log(`Listening at ${PORT}`)
+    app.listen(5000, () =>
+      console.log(`Listening at ${5000}`)
     )
   )
   .catch((error) => console.log(error));
