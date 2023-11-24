@@ -1,11 +1,11 @@
-{
+{ "homepage": "http://VijayaGaikwad.github.io/Social-Media-app-1",
   "name": "server",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "node index.js"
   },
   "keywords": [],
   "author": "",
@@ -19,6 +19,9 @@
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.0.1",
     "multer": "^1.4.5-lts.1",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
     "nodemon": "^3.0.1"
   }
 }

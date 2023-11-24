@@ -13,7 +13,7 @@ const Post = ({data}) => {
   const {user} = useSelector((state)=>state.authReducer.authData)
   const [liked, setLiked] = useState(data.likes.includes(user._id))
   const [likes, setLikes] = useState(data.likes.length)
-  const serverPublic = process.env.REACT_APP_PUBLIC_FOLDER
+  
 
   const handleLike = ()=> {
     setLiked((prev)=>!prev) 
@@ -22,10 +22,7 @@ const Post = ({data}) => {
   }
   return (
     <div className="Post">
-      {/* <div className="PostShare">
-      <img src={user.profilePicture ? serverPublic + user.profilePicture : serverPublic + "defaultProfile.png"} alt="" />
-      <div>{user.firstname} </div>
-      </div> */}
+      
         <img src={data.image ? process.env.REACT_APP_PUBLIC_FOLDER + data.image : ""} alt="" />
 
 
